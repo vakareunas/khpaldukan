@@ -1,18 +1,19 @@
 import React, { Component } from 'react'
-import { Container, Title, Content, Button, Textarea, Text, Card, CardItem, Body, Form, Item, Input } from 'native-base'
+import { Container, Title, Content, Button, Icon, Textarea, Text, Card, CardItem, Body, Form, Item, Input } from 'native-base'
 import { View, Modal, ActivityIndicator } from 'react-native'
 import colors from './assets/Colors'
 import axios from 'axios'
 import base from './base'
 
 export default class Registration extends Component {
-    static navigationOptions = {
+    static navigationOptions =  ({ navigation, screenProps }) => ({
         title: 'Registration',
         headerStyle:{
             backgroundColor: colors.third,
       },
-      headerTintColor: colors.white
-    }
+      headerTintColor: colors.white,
+      headerLeft: <Icon name='arrow-back' style={{ color: colors.white, paddingLeft: 4}} onPress={() => navigation.goBack(null)} />
+    });
     constructor(props) {
         super(props)
         this.state = {

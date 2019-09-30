@@ -21,26 +21,6 @@ import NumericInput from 'react-native-numeric-input'
 import Slideshow from 'react-native-image-slider-show'
 
 
-// const cards = [
-//   {
-//     text: 'Card One',
-//     name: 'One',
-//     image: require('./assets/imgs/1.jpg'),
-//   },
-//   {
-//     text: 'Card One',
-//     name: 'One',
-//     image: require('./assets/imgs/2.jpg'),
-//   },
-// ];
-
-const dataArray = [
-  { title: "First Element", content: "Lorem ipsum dolor sit amet" },
-  { title: "Second Element", content: "Lorem ipsum dolor sit amet" },
-  { title: "Third Element", content: "Lorem ipsum dolor sit amet" }
-];
-
-
 class HomeScreen extends Component {
     constructor(props) {
       super(props);
@@ -60,7 +40,7 @@ class HomeScreen extends Component {
       }
        navigate = props.navigation.navigate;
     }
-    componentWillMount() {
+    componentDidMount() {
       this.setState({ loading: true })
       axios.get(`${base}get-bundle-products`).then(response => {
           const bundle = response.data

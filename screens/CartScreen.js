@@ -8,13 +8,14 @@ import { connect } from 'react-redux'
 import NumericInput from 'react-native-numeric-input'
 
 class CartScreen extends Component {
-    static navigationOptions = {
+    static navigationOptions =  ({ navigation, screenProps }) => ({
         title: 'My Cart',
         headerStyle:{
             backgroundColor: colors.third,
       },
-      headerTintColor: colors.white
-    }
+      headerTintColor: colors.white,
+      headerLeft: <Icon name='arrow-back' style={{ color: colors.white, paddingLeft: 4}} onPress={() => navigation.goBack(null)} />
+    });
     constructor (props) {
         super(props)
         this.state = {

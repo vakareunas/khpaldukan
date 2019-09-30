@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, Modal,
     ActivityIndicator, AsyncStorage } from 'react-native'
-import { Container, Title, Content, Button, Text, Card, CardItem, Body, Form, Item, Input, Textarea, Left, Right } from 'native-base'
+import { Container, Title, Content, Button, Text, Icon, Card, CardItem, Body, Form, Item, Input, Textarea, Left, Right } from 'native-base'
 
 import colors from './assets/Colors'
 
@@ -11,13 +11,15 @@ import base from './base'
 import axios from 'axios';
 
 class LoginScreen extends Component {
-    static navigationOptions = {
+    
+    static navigationOptions =  ({ navigation, screenProps }) => ({
         title: 'Login',
         headerStyle:{
             backgroundColor: colors.third,
       },
-      headerTintColor: colors.white
-    }
+      headerTintColor: colors.white,
+      headerLeft: <Icon name='arrow-back' style={{ color: colors.white, paddingLeft: 4}} onPress={() => navigation.goBack(null)} />
+    });
     constructor(props) {
         super(props)
         this.state = {
