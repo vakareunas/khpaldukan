@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import { createStackNavigator, createAppContainer } from "react-navigation";
-import { StatusBar } from 'react-native'
+import { StatusBar, Platform } from 'react-native'
 import { Container } from 'native-base'
 import Drawer from './Drawer'
 //import Routes from './Routes'
@@ -15,6 +15,7 @@ export default class App extends Component{
        <Container>
          <StatusBar
           barStyle="dark-content"
+          height="10"
           backgroundColor="#ecf0f1"
         />
         <Provider store={store}>
