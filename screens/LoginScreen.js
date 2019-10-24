@@ -57,6 +57,7 @@ class LoginScreen extends Component {
     _login() {
         if (this.state.username == '' || this.state.password == '') {
             alert('Please fill the required fields')
+            return
         }
         this.setState({ loading: true })
         axios.post(`${base}mobile-user-login`, {
